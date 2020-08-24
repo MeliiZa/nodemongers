@@ -14,6 +14,7 @@ var usersRouter = require('./routes/users');          // Created by Express Gene
 const campsiteRouter = require('./routes/campsiteRouter');        // Importing file-based modules/routers with keyword "require"
 const promotionRouter = require('./routes/promotionRouter');      // Importing file-based modules/routers with keyword "require"
 const partnerRouter = require('./routes/partnerRouter');          // Importing file-based modules/routers with keyword "require"
+const uploadRouter = require('./routes/uploadRouter');
 
 // Connect this Express app to the MongoDB server thru Mongoose wrapper methods around MongoDB Node Driver 
 const mongoose = require('mongoose');                  // Require Mongoose module
@@ -63,6 +64,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
+app.use('/imageUpload', uploadRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
