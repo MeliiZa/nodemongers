@@ -14,6 +14,7 @@ const userSchema = new Schema({
         type: String, 
         default: ''
     },
+    facebookId: String,
     admin: {                            // No longer need to explicitly define username/password bc passport local mongoose will do that for us
         type: Boolean,
         default: false                  // When a new user doc is created, the admin flag will be set to false
