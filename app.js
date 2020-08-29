@@ -15,6 +15,7 @@ const campsiteRouter = require('./routes/campsiteRouter');        // Importing f
 const promotionRouter = require('./routes/promotionRouter');      // Importing file-based modules/routers with keyword "require"
 const partnerRouter = require('./routes/partnerRouter');          // Importing file-based modules/routers with keyword "require"
 const uploadRouter = require('./routes/uploadRouter');
+const favoriteRouter = require ('./routes/favoriteRouter');
 
 // Connect this Express app to the MongoDB server thru Mongoose wrapper methods around MongoDB Node Driver 
 const mongoose = require('mongoose');                  // Require Mongoose module
@@ -64,7 +65,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
+app.use('/favorites', favoriteRouter);
 app.use('/imageUpload', uploadRouter);
+
 
 
 // catch 404 and forward to error handler
